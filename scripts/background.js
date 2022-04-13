@@ -3,12 +3,13 @@ let timer;
 const triggerScavenger = (on) => {
   if (on) {
     clearAds()
-    timer = setInterval(() => {
+    // Required to block any JS generated ads after page loaded
+    timer = setTimeout(() => {
       clearAds()
-    }, 1000)
+    }, 500)
   } else {
     if (timer) {
-      clearInterval(timer)
+      setTimeout(timer)
     }
   }
 }
