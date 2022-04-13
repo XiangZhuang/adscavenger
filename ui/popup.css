@@ -1,0 +1,64 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, serif;
+  color: #B02828;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logo {
+  width: 100px;
+}
+
+.toggles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.toggle-bar {
+  display: flex;
+  align-items: center;
+  font-family: Arial, serif;
+  font-size: 14px;
+  color: dimgray;
+}
+
+.toggle {
+  position: relative;
+  margin-right: 10px;
+  width: 46px;
+  height: 26px;
+  border-radius: 13px;
+  background-color: #EAEAEA;
+  cursor: pointer;
+}
+
+.toggle-bar.enabled > .toggle {
+  background-color: #B02828;
+}
+
+.toggle > .circle {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  transition: left 0.15s;
+}
+
+.toggle-bar.enabled > .toggle > .circle {
+  left: calc(100% - 23px);
+}
