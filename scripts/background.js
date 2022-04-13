@@ -2,14 +2,20 @@ let timer;
 
 const triggerScavenger = (on) => {
   if (on) {
+    clearAds()
     timer = setInterval(() => {
-      [...document.getElementsByClassName("adsbygoogle")].map(element => element.style.display = 'none')
+      clearAds()
     }, 1000)
   } else {
     if (timer) {
       clearInterval(timer)
     }
   }
+}
+
+const clearAds = () => {
+  const elements = [...document.getElementsByClassName("adsbygoogle")]
+  elements.map(element => element.style.display = 'none')
 }
 
 chrome.storage.local.get(['adsScavengerOn'], ({ adsScavengerOn }) => {
